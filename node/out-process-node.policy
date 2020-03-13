@@ -1,0 +1,86 @@
+grant codeBase "file:${{java.ext.dirs}}/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${java.home}/../lib/tools.jar" {
+    permission java.security.AllPermission;
+};
+
+// Local artifact caches:
+grant codeBase "file:${user.home}/.m2/repository/-" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.gradle.user.home}/caches/-" {
+    permission java.security.AllPermission;
+};
+
+// The Corda project:
+grant codeBase "file:${test.rootProject.dir}/core/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/core-deterministic/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/common/configuration-parsing/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/common/logging/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/common/validation/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/confidential-identities/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/node/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/node/djvm/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/node-api/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/serialization/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/serialization-deterministic/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/serialization-djvm/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/tools/cliutils/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${test.rootProject.dir}/tools/shell/build/libs/*" {
+    permission java.security.AllPermission;
+};
+
+// The deployed node:
+grant codeBase "file:${user.dir}/drivers/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:${user.dir}/shell-commands/-" {
+    // Nothing!
+};
+
+grant codeBase "file:${user.dir}/cordapps/*" {
+    permission java.util.PropertyPermission "*", "read";
+};
